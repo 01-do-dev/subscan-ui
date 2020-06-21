@@ -1,7 +1,7 @@
 import "babel-polyfill"; // 引入垫片
 import Vue from "vue";
 import VueI18n from "vue-i18n";
-import VueAnalytics from 'vue-analytics';
+// import VueAnalytics from 'vue-analytics';
 
 // import 'Directives'; // 全局注入指令（请使用局部注入）
 
@@ -43,24 +43,24 @@ const i18n = new VueI18n({
 });
 ElementLocale.i18n((key, value) => i18n.t(key, value));
 
-//引入谷歌分析
-const isProd = process.env.NODE_ENV === 'production';
-//区分kusama-cc3, icefrog, edgeware
-let ua = 'UA-152561314-5';
-let href = window.location && window.location.href;
-if (href.indexOf('kusama') > -1) {
-  ua = 'UA-152561314-3';
-} else if (href.indexOf('icefrog') > -1) {
-  ua = 'UA-152561314-4';
-}
-Vue.use(VueAnalytics, {
-  id: ua,
-  router,
-  debug: {
-    enabled: !isProd,
-    sendHitTask: isProd
-  }
-})
+// //引入谷歌分析
+// const isProd = process.env.NODE_ENV === 'production';
+// //区分kusama-cc3, icefrog, edgeware
+// let ua = 'UA-152561314-5';
+// let href = window.location && window.location.href;
+// if (href.indexOf('kusama') > -1) {
+//   ua = 'UA-152561314-3';
+// } else if (href.indexOf('icefrog') > -1) {
+//   ua = 'UA-152561314-4';
+// }
+// Vue.use(VueAnalytics, {
+//   id: ua,
+//   router,
+//   debug: {
+//     enabled: !isProd,
+//     sendHitTask: isProd
+//   }
+// })
 
 // 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false;

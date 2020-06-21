@@ -35,7 +35,11 @@ export default {
         {
           key: "icefrog",
           value: "icefrog"
-        }
+        },
+        {
+          key: "phala",
+          value: "phala"
+        },
       ]
     };
   },
